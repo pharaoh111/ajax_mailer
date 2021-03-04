@@ -1,0 +1,20 @@
+<h1> <%= @emails.object %> </h1>
+<h5 class="mt-5"> <%= @emails.body %> </h1>
+
+
+<button class="btn btn-info"><%= button_to "Ray Charles", {:controller => :emails, :action => 'show'}, :method => :get %></button>
+
+
+
+<%= link_to "Delete this Mail", email_path(@emails), method: :delete, class: "btn btn-danger", remote: true %>
+<br>
+<br>
+<br>
+
+
+<%= if @emails.read == true 
+    "The message has been read"
+    elsif @emails.read == false
+    "The message has not been read"
+end%>
+

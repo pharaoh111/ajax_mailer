@@ -1,0 +1,17 @@
+<% @emails.each do |email|  %>
+
+<ul id="list-group" class="list-group d-flex align-items-center">
+  <li id="firstmail" class="list-group-item w-25 d-flex justify-content-center mt-4"><%= email.object %></li>
+  <li id="secondmail" class="list-group-item w-25 d-flex justify-content-center"><a href="<%= email_path(email.id) %>"><%= email.body %></a></li>
+</ul>
+
+
+<% end %>
+
+<div class="d-flex justify-content-center pt-2">
+<button class="btn btn-info"><%= button_to 'Receive Email', {:controller => "emails", :action => "create"} , remote: true ,:method=>:post%></button>
+</div>
+</div> 
+
+
+
